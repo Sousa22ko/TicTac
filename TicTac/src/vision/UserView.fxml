@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vision.UserViewController">
+   <children>
+      <Pane layoutX="415.0" layoutY="294.0" prefHeight="385.0" prefWidth="533.0" style="-fx-border-color: grey; -fx-background-color: white;">
+         <children>
+            <Label fx:id="nome" layoutX="260.0" layoutY="90.0" text="Label" />
+            <Label layoutX="40.0" layoutY="90.0" text="Nome" />
+            <Label fx:id="email" layoutX="260.0" layoutY="140.0" text="Label" />
+            <Label layoutX="40.0" layoutY="140.0" text="Email" />
+            <Label layoutX="190.0" layoutY="18.0" text="Informações pessoais">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="470.0" layoutY="346.0" mnemonicParsing="false" onAction="#handlerEdit" text="Editar" />
+         </children>
+      </Pane>
+      <Pane layoutX="27.0" layoutY="293.0" prefHeight="385.0" prefWidth="391.0" style="-fx-border-color: grey; -fx-background-color: lightgreen;" AnchorPane.leftAnchor="10.0">
+         <children>
+            <Label layoutX="106.0" layoutY="19.0" text="Informações da conta">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="90.0" text="Criada" />
+            <Label fx:id="criada" layoutX="260.0" layoutY="90.0" text="Label" />
+            <Label layoutX="40.0" layoutY="140.0" text="Ultimo acesso" />
+            <Label fx:id="utlimoA" layoutX="260.0" layoutY="140.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane layoutX="965.0" layoutY="294.0" prefHeight="385.0" prefWidth="391.0" style="-fx-border-color: grey; -fx-background-color: lightyellow;" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Label layoutX="115.0" layoutY="18.0" text="Informações da liga">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="90.0" text="Maior liga" />
+            <Label fx:id="maiorL" layoutX="260.0" layoutY="90.0" text="Label" />
+            <Label layoutX="40.0" layoutY="140.0" text="Pontuação maxima" />
+            <Label fx:id="maiorP" layoutX="260.0" layoutY="140.0" text="Label" />
+            <Label layoutX="40.0" layoutY="190.0" text="Maior sequencia" />
+            <Label fx:id="maiorS" layoutX="260.0" layoutY="190.0" text="Label" />
+            <Label layoutX="40.0" layoutY="240.0" text="Ultima liga" />
+            <Label fx:id="lastL" layoutX="260.0" layoutY="240.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane layoutX="597.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: grey; -fx-background-color: red;">
+         <children>
+            <Pane fx:id="backFoto" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="foto" layoutX="79.0" layoutY="80.0" text="Foto" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button layoutX="23.0" layoutY="18.0" mnemonicParsing="false" onAction="#handlerVoltar" prefHeight="100.0" prefWidth="100.0" text="Voltar ao inicio" />
+   </children>
+</AnchorPane>
