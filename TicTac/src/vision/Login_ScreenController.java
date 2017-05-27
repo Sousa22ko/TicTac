@@ -4,7 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import util.SceneBuilder;
+import util.SourcesLoader;
 
 public class Login_ScreenController {
 	
@@ -18,13 +20,21 @@ public class Login_ScreenController {
 	private PasswordField senha;
 	
 	@FXML
-	public void OnLoginHandler(){
+	private Pane background;
+	
+	@FXML
+	public void initialize(){
+		SourcesLoader.LoadBackground(background);
+	}
+	
+	@FXML
+	public void LoginHandler(){
 		SceneBuilder.loadHomeScreen();
 	}
 	
 	@FXML
-	public void OnCadastroHandler(){
-		SceneBuilder.loadHomeScreen();
+	public void CadastroHandler(){
+		SceneBuilder.loadNewAccount();
 	}
 
 	}

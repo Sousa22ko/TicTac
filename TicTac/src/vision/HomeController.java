@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import util.SceneBuilder;
+import util.SourcesLoader;
 
 public class HomeController {
 
@@ -26,8 +27,7 @@ public class HomeController {
 		//TO-DO
 		//load nome pontuação league
 		
-		background.setStyle("-fx-background-image: url(sources/Background.jpg);-fx-background-position: center center;" + 
-               "-fx-background-repeat: stretch; -fx-background-size : cover;");
+		SourcesLoader.LoadBackground(background);
 	}
 	
 	@FXML

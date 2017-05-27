@@ -4,38 +4,42 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import util.SceneBuilder;
+import util.SourcesLoader;
 
 public class UserViewController {
 	
 	@FXML
-	public Label nome;
+	private Label nome;
 	
 	@FXML
-	public Label email;
+	private Label email;
 	
 	@FXML
-	public Label criada;
+	private Label criada;
 	
 	@FXML
-	public Label utlimoA;
+	private Label utlimoA;
 	
 	@FXML
-	public Label maiorL;
+	private Label maiorL;
 	
 	@FXML
-	public Label maiorP;
+	private Label maiorP;
 	
 	@FXML
-	public Label maiorS;
+	private Label maiorS;
 	
 	@FXML
-	public Label lastL;
+	private Label lastL;
 	
 	@FXML
-	public Label foto;
+	private Label foto;
 	
 	@FXML
-	public Pane backFoto;
+	private Pane backFoto;
+	
+	@FXML
+	private Pane background;
 	
 	@FXML
 	public void handlerVoltar(){
@@ -44,14 +48,16 @@ public class UserViewController {
 	
 	@FXML
 	public void handlerEdit(){
-		//TO-DO
+		//TODO
 		//tela de edit
+		SceneBuilder.loadUserViewEdit();
 	}
 	
 	@FXML
 	public void initialize(){
-		//TO-DO
+		//TODO
 		//Carregar o fundo da foto e as informações
+		SourcesLoader.LoadBackground(background);
 	}
 
 }

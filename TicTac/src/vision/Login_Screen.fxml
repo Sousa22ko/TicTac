@@ -6,20 +6,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vision.Login_ScreenController">
    <children>
-      <Pane layoutX="350.0" layoutY="25.0" prefHeight="768.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="background" layoutX="350.0" layoutY="25.0" prefHeight="768.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="592.0" layoutY="25.0" text="Tic Tac ">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+         </children></Pane>
       <Pane layoutX="128.0" layoutY="181.0" prefHeight="285.0" prefWidth="567.0" style="-fx-border-color: grey; -fx-background-color: white;" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="180.0">
          <children>
-            <TextField layoutX="243.0" layoutY="96.0" prefHeight="25.0" prefWidth="160.0" />
-            <PasswordField layoutX="243.0" layoutY="161.0" prefHeight="25.0" prefWidth="160.0" />
+            <TextField fx:id="usuario" layoutX="243.0" layoutY="96.0" prefHeight="25.0" prefWidth="160.0" />
+            <PasswordField fx:id="senha" layoutX="243.0" layoutY="161.0" prefHeight="25.0" prefWidth="160.0" />
             <Label layoutX="108.0" layoutY="100.0" text="Nome:" />
             <Label layoutX="108.0" layoutY="164.0" text="Senha:" />
-            <Button fx:id="login" layoutX="238.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#OnLoginHandler" prefHeight="25.0" prefWidth="187.0" text="Login" />
-            <Button layoutX="35.0" layoutY="221.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Novo? cadastrar" />
+            <Button layoutX="238.0" layoutY="221.0" mnemonicParsing="false" onAction="#LoginHandler" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Login" />
+            <Button layoutX="35.0" layoutY="221.0" mnemonicParsing="false" onAction="#CadastroHandler" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Novo? cadastrar" />
          </children>
       </Pane>
-      <Label layoutX="301.0" layoutY="82.0" text="Tic Tac " AnchorPane.leftAnchor="680.0" AnchorPane.topAnchor="80.0" />
    </children>
 </AnchorPane>

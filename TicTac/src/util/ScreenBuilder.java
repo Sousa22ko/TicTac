@@ -93,6 +93,27 @@ public class ScreenBuilder {
 
 	}
 	
+	public static void renderUserViewEdit() {
+
+		path = "UserViewEdit.fxml";
+		title = "Editar informações pessoais do usuario";
+		buildScreen();
+		
+	}
+	
+	public static void renderNewAccount(){
+		path = "NewAccount.fxml";
+		title = "Cadastrar nova conta";
+		buildScreen();
+		
+	}
+	
+	public static void renderMatch(){
+		path = "Match.fxml";
+		title = "Let's Rock it";
+		buildScreen();
+		
+	}
 	
 	//-----------------------------------constroi as telas
 	
@@ -108,5 +129,7 @@ public class ScreenBuilder {
 		primaryStage.show();
 		
 	}
+
+	
 
 }

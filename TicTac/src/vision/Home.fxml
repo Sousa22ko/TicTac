@@ -10,21 +10,21 @@
       <Pane fx:id="background" layoutY="40.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: lightgrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane layoutX="4.0" layoutY="4.0" prefHeight="112.0" prefWidth="790.0" style="-fx-border-color: grey; -fx-background-color: white;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
          <children>
-            <Button layoutX="6.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlerUserButton" prefHeight="100.0" prefWidth="100.0" text="Button" />
+            <Button layoutX="6.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlerUserButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Button" />
             <Label layoutX="127.0" layoutY="14.0" text="Nome:" />
             <Label layoutX="127.0" layoutY="48.0" text="Pontuação:" />
-            <Button layoutX="1250.0" layoutY="7.0" mnemonicParsing="false" onAction="#handlerConfigButton" prefHeight="100.0" prefWidth="100.0" text="Configurações" />
-            <Button fx:id="liga" layoutX="1056.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLeagueButton" prefHeight="50.0" prefWidth="166.0" text="Liga" />
+            <Button layoutX="1250.0" layoutY="7.0" mnemonicParsing="false" onAction="#handlerConfigButton" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Configurações" />
+            <Button fx:id="liga" layoutX="1056.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlerLeagueButton" prefHeight="50.0" prefWidth="166.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Liga" />
             <Label fx:id="nome" layoutX="219.0" layoutY="14.0" text="Label" />
             <Label fx:id="pontuacao" layoutX="219.0" layoutY="48.0" text="Label" />
          </children>
       </Pane>
       <Pane layoutX="211.0" layoutY="239.0" prefHeight="332.0" prefWidth="381.0" style="-fx-border-color: grey; -fx-background-color: white;" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="493.0">
          <children>
-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onAction="#handlerSearchMatchButton" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: white; -fx-border-color: lightgrey;" text="Procurar partidas" />
-            <Button layoutX="11.0" layoutY="96.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: white; -fx-border-color: lightgrey;" text="Criar partidas" />
-            <Button layoutX="11.0" layoutY="175.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: white; -fx-border-color: lightgrey;" text="Desempenhos anteriores" />
-            <Button layoutX="11.0" layoutY="254.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: white; -fx-border-color: lightgrey;" text="Desafiar jogador" />
+            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onAction="#handlerSearchMatchButton" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Procurar partidas" />
+            <Button layoutX="11.0" layoutY="96.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Criar partidas" />
+            <Button layoutX="11.0" layoutY="175.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desempenhos anteriores" />
+            <Button layoutX="11.0" layoutY="254.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desafiar jogador" />
          </children>
       </Pane>
    </children>

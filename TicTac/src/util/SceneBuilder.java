@@ -29,6 +29,10 @@ public class SceneBuilder {
 		
 	}
 	
+	public static Stage getStage(){
+		return primaryStage;
+	}
+	
 	public static Object getComponent(String path) {
 
 		setDimensions();
@@ -134,6 +138,33 @@ public class SceneBuilder {
 		ScreenBuilder.load_stage(pane, primaryStage);
 		
 		ScreenBuilder.renderUserView();
+		
+		primaryStage.setWidth(dimension.width);
+		primaryStage.setHeight(dimension.height);
+	}
+	
+	public static void loadUserViewEdit(){
+		ScreenBuilder.load_stage(pane, primaryStage);
+		
+		ScreenBuilder.renderUserViewEdit();
+		
+		primaryStage.setWidth(dimension.width);
+		primaryStage.setHeight(dimension.height);
+	}
+	
+	public static void loadNewAccount(){
+		ScreenBuilder.load_stage(pane, primaryStage);
+		
+		ScreenBuilder.renderNewAccount();
+		
+		primaryStage.setWidth(dimension.width);
+		primaryStage.setHeight(dimension.height);
+	}
+	
+	public static void loadMatch(){
+		ScreenBuilder.load_stage(pane, primaryStage);
+		
+		ScreenBuilder.renderMatch();
 		
 		primaryStage.setWidth(dimension.width);
 		primaryStage.setHeight(dimension.height);
