@@ -1,13 +1,12 @@
 package model;
 
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.swing.ImageIcon;
 
 import annotation.ColumnNameInView;
 
@@ -25,11 +24,11 @@ public class User {
 
 	private String Email;
 
-	private ImageIcon foto;
+	private byte[] foto;
 
 	private int maxStreak;
 
-	private Date lastAcess;
+	private Calendar lastAcess;
 
 	private int lastLeague;
 
@@ -65,11 +64,11 @@ public class User {
 		Email = email;
 	}
 
-	public ImageIcon getFoto() {
+	public byte[] getFoto() {
 		return foto;
 	}
 
-	public void setFoto(ImageIcon foto) {
+	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
 
@@ -81,11 +80,11 @@ public class User {
 		this.maxStreak = maxStreak;
 	}
 
-	public Date getLastAcess() {
+	public Calendar getLastAcess() {
 		return lastAcess;
 	}
 
-	public void setLastAcess(Date lastAcess) {
+	public void setLastAcess(Calendar lastAcess) {
 		this.lastAcess = lastAcess;
 	}
 

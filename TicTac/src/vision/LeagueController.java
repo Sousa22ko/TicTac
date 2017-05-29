@@ -3,8 +3,8 @@ package vision;
 import javafx.fxml.FXML;
 import util.SceneBuilder;
 
-public class OldResultsController {
-
+public class LeagueController {
+	
 	@FXML
 	public void handlerVoltar(){
 		SceneBuilder.loadHomeScreen();

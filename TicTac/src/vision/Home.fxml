@@ -22,9 +22,9 @@
       <Pane layoutX="211.0" layoutY="239.0" prefHeight="332.0" prefWidth="381.0" style="-fx-border-color: grey; -fx-background-color: white;" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="493.0">
          <children>
             <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onAction="#handlerSearchMatchButton" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Procurar partidas" />
-            <Button layoutX="11.0" layoutY="96.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Criar partidas" />
-            <Button layoutX="11.0" layoutY="175.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desempenhos anteriores" />
-            <Button layoutX="11.0" layoutY="254.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desafiar jogador" />
+            <Button layoutX="11.0" layoutY="96.0" mnemonicParsing="false" onAction="#handlerNewMatch" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Criar partidas" />
+            <Button layoutX="11.0" layoutY="175.0" mnemonicParsing="false" onAction="#handlerOldResults" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desempenhos anteriores" />
+            <Button layoutX="11.0" layoutY="254.0" mnemonicParsing="false" onAction="#handlerChallenger" prefHeight="50.0" prefWidth="358.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Desafiar jogador" />
          </children>
       </Pane>
    </children>
