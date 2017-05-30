@@ -10,4 +10,4 @@ Alternativamente pode-se importar o projeto para o eclipse e executar direto no 
 [https://youtu.be/0hNdagdte2M](https://youtu.be/0hNdagdte2M "link do video do sistema")
 
 
-Algumas telas ainda estão em desenvolvimento, bem como o banco de dados do sistema 
+Algumas telas ainda estão em desenvolvimento, bem como o banco de dados do sistema e a mecanica de jogabilidade esta parcialmente implementada
