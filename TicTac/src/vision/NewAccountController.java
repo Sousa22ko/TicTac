@@ -1,6 +1,8 @@
 package vision;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
@@ -25,7 +27,7 @@ public class NewAccountController {
 	private User novo = new User();
 	File file = null;
 
-	public void createUser() {
+	public void createUser() throws IOException {
 		if (nome.getText() != null && nome.getText().length() < 30) {
 			novo.setNome(nome.getText());
 		}
@@ -37,11 +39,13 @@ public class NewAccountController {
 		novo.setSenha(senha.getText());
 		
 		
-		byte [] fot = new byte[1024];
+		byte [] fot;
 		if (file != null) {
+			fot = Files.readAllBytes(file.toPath());
 			novo.setFoto(fot);//new ImageIcon(file.getAbsolutePath()));
 		}
 		else{
+			fot = new byte[1024];
 			novo.setFoto(fot); // padrão
 		}
 			
@@ -52,7 +56,7 @@ public class NewAccountController {
 	}
 
 	@FXML
-	public void handlerCadastrar() {
+	public void handlerCadastrar() throws IOException {
 		createUser();
 	}
 
