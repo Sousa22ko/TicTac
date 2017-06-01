@@ -26,6 +26,7 @@
             <Label layoutX="108.0" layoutY="164.0" text="Senha:" />
             <Button layoutX="238.0" layoutY="221.0" mnemonicParsing="false" onAction="#LoginHandler" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Login" />
             <Button layoutX="35.0" layoutY="221.0" mnemonicParsing="false" onAction="#CadastroHandler" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Novo? cadastrar" />
+            <Label fx:id="error" layoutX="242.0" layoutY="254.0" textFill="RED" />
          </children>
       </Pane>
    </children>

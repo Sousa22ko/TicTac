@@ -9,11 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import model.User;
+import util.LoggedUser;
 import util.SceneBuilder;
 import util.SourcesLoader;
 
 public class UserViewEditController {
-	
+
 	@FXML
 	private TextField nome;
 	
@@ -21,55 +23,81 @@ public class UserViewEditController {
 	private TextField email;
 	
 	@FXML
+	private Label criada;
+	
+	@FXML
+	private Label utlimoA;
+	
+	@FXML
+	private Label maiorL;
+	
+	@FXML
+	private Label maiorP;
+	
+	@FXML
+	private Label maiorS;
+	
+	@FXML
+	private Label lastL;
+	
+	@FXML
 	private Label foto;
+	
+	@FXML
+	private Label pontuacao;
+	
+	@FXML
+	private Pane backFoto;
 	
 	@FXML
 	private Pane background;
 	
+	private User user;
+
 	@FXML
-	public void handlerVoltar(){
+	public void handlerVoltar() {
 		SceneBuilder.loadHomeScreen();
 	}
-	
+
 	@FXML
-	public void handlerFoto(){
-		
+	public void handlerFoto() {
+
 		FileChooser fc = new FileChooser();
 		File file = new File("");
-		
+
 		file = fc.showOpenDialog(SceneBuilder.getStage());
-		//TODO persistir file;
+		// TODO persistir file;
 		file = file.getAbsoluteFile();
 	}
-	
+
 	@FXML
-	public void handlerSalvar(){
-		if(nome.getText() != null && nome.getText().length() < 30){
-			if(EmailValidator.getInstance().isValid(email.getText())){
-				//TODO persistir informações		
+	public void handlerSalvar() {
+		if (nome.getText() != null && nome.getText().length() < 30) {
+			if (EmailValidator.getInstance().isValid(email.getText())) {
+				// TODO persistir informações
+			} else {
+				// TODO mensagem de erro email invalido
 			}
-			else{
-				//TODO mensagem de erro email invalido
-			}
-		}else{
-			//TODO mensagem de erro nome muito grande
+		} else {
+			// TODO mensagem de erro nome muito grande
 		}
 	}
-	
+
 	@FXML
-	public void handlerCancelar(){
+	public void handlerCancelar() {
 		SceneBuilder.loadUserView();
 	}
-	
+
 	@FXML
-	public void initialize(){
-		//TODO
-		//Carregar o as informações
-		//inclusive nos labels
-		
-		nome.setText("testando nome");
-		email.setText("testando email");
-		
+	public void initialize() {
+		user = LoggedUser.getLoggedUser();
+
+		nome.setText(user.getNome());
+		email.setText(user.getEmail());
+		maiorS.setText("" + user.getMaxStreak());
+		pontuacao.setText("" + user.getPontuacao());
+		maiorP.setText("" + user.getMaxPontuacao());
+
 		SourcesLoader.LoadBackground(background);
 	}
 

@@ -39,6 +39,8 @@
                   <Label fx:id="maiorS" layoutX="260.0" layoutY="190.0" text="Label" />
                   <Label layoutX="40.0" layoutY="240.0" text="Ultima liga" />
                   <Label fx:id="lastL" layoutX="260.0" layoutY="240.0" text="Label" />
+                  <Label layoutX="40.0" layoutY="290.0" text="Pontuação atual" />
+                  <Label fx:id="pontuacao" layoutX="260.0" layoutY="290.0" text="Label" />
                </children>
             </Pane>
             <Pane layoutX="583.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: grey; -fx-background-color: red;">

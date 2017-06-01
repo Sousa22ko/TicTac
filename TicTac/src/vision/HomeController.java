@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import model.User;
+import util.LoggedUser;
 import util.SceneBuilder;
 import util.SourcesLoader;
 
@@ -21,11 +23,17 @@ public class HomeController {
 	@FXML
 	private Button liga;
 	
+	private User user;
 	
 	@FXML
 	public void initialize(){
-		//TO-DO
-		//load nome pontuação league
+		user = LoggedUser.getLoggedUser();
+
+		nome.setText(user.getNome());
+		pontuacao.setText(""+user.getPontuacao());
+		
+		//TODO colocar ft no bt 
+		//TODO carregar cor da liga no bt
 		
 		SourcesLoader.LoadBackground(background);
 	}

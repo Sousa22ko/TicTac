@@ -3,6 +3,8 @@ package vision;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import model.User;
+import util.LoggedUser;
 import util.SceneBuilder;
 import util.SourcesLoader;
 
@@ -36,10 +38,15 @@ public class UserViewController {
 	private Label foto;
 	
 	@FXML
+	private Label pontuacao;
+	
+	@FXML
 	private Pane backFoto;
 	
 	@FXML
 	private Pane background;
+	
+	private User user;
 	
 	@FXML
 	public void handlerVoltar(){
@@ -48,15 +55,19 @@ public class UserViewController {
 	
 	@FXML
 	public void handlerEdit(){
-		//TODO
-		//tela de edit
 		SceneBuilder.loadUserViewEdit();
 	}
 	
 	@FXML
 	public void initialize(){
-		//TODO
-		//Carregar o fundo da foto e as informações
+		user = LoggedUser.getLoggedUser();
+		
+		nome.setText(user.getNome());
+		email.setText(user.getEmail());
+		maiorS.setText("" + user.getMaxStreak());
+		pontuacao.setText(""+ user.getPontuacao()); // TODO colocar o label na tela
+		maiorP.setText("" + user.getMaxPontuacao());
+		
 		SourcesLoader.LoadBackground(background);
 	}
 

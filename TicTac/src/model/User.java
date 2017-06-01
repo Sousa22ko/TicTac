@@ -1,12 +1,12 @@
 package model;
 
 
-import java.util.Calendar;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import annotation.ColumnNameInView;
 
@@ -18,20 +18,44 @@ public class User {
 	@ColumnNameInView(index = 0, text = "id")
 	private long idUser;
 
+	@Column(name = "nome")
 	private String nome;
 
+	@Column(name = "senha")
 	private String senha;
 
+	@Column(name = "email")
 	private String Email;
 
+	@Lob
+	@Column(name = "foto")
 	private byte[] foto;
 
+	@Column(name = "maxStreak")
 	private int maxStreak;
 
-	private Calendar lastAcess;
+	//private Calendar lastAcess;
 
+	@Column(name = "lastLeague")
 	private int lastLeague;
+	
+	@Column(name = "pontuacao")
+	private int pontuacao;
+	
+	@Column(name = "maxPontuacao")
+	private int maxPontuacao;
+	
+	
+	//------------------------------------methods----------------------------//
 
+	public User(){
+		
+		//TODO esta dando problema no maxPontuação = null
+		maxPontuacao = 0;
+		pontuacao = 0;
+		maxStreak = 0;
+	}
+	
 	public long getIdUser() {
 		return idUser;
 	}
@@ -80,13 +104,6 @@ public class User {
 		this.maxStreak = maxStreak;
 	}
 
-	public Calendar getLastAcess() {
-		return lastAcess;
-	}
-
-	public void setLastAcess(Calendar lastAcess) {
-		this.lastAcess = lastAcess;
-	}
 
 	public int getLastLeague() {
 		return lastLeague;
@@ -96,7 +113,20 @@ public class User {
 		this.lastLeague = lastLeague;
 	}
 	
+	public int getPontuacao(){
+		return pontuacao;
+	}
 	
+	public void setPontuacao(int p){
+		pontuacao = p;
+	}
 	
+	public int getMaxPontuacao(){
+		return maxPontuacao;
+	}
+	
+	public void setMaxPontuacao(int p){
+		maxPontuacao = p;
+	}
 	
 }
