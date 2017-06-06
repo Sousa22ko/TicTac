@@ -49,8 +49,6 @@ public class User {
 	//------------------------------------methods----------------------------//
 
 	public User(){
-		
-		//TODO esta dando problema no maxPontuação = null
 		maxPontuacao = 0;
 		pontuacao = 0;
 		maxStreak = 0;

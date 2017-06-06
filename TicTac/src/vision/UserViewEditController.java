@@ -1,9 +1,13 @@
 package vision;
 
-import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
+import javax.persistence.NoResultException;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
+import dao.UserDao;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,41 +22,47 @@ public class UserViewEditController {
 
 	@FXML
 	private TextField nome;
-	
+
 	@FXML
 	private TextField email;
-	
+
 	@FXML
 	private Label criada;
-	
+
 	@FXML
 	private Label utlimoA;
-	
+
 	@FXML
 	private Label maiorL;
-	
+
 	@FXML
 	private Label maiorP;
-	
+
 	@FXML
 	private Label maiorS;
-	
+
 	@FXML
 	private Label lastL;
-	
+
 	@FXML
 	private Label foto;
-	
+
 	@FXML
 	private Label pontuacao;
-	
+
+	@FXML
+	private Label error;
+
 	@FXML
 	private Pane backFoto;
-	
+
 	@FXML
 	private Pane background;
-	
+
 	private User user;
+	
+	private boolean erru = false;
+	private boolean erre = false;
 
 	@FXML
 	public void handlerVoltar() {
@@ -63,24 +73,64 @@ public class UserViewEditController {
 	public void handlerFoto() {
 
 		FileChooser fc = new FileChooser();
-		File file = new File("");
+		try {
+			byte[] foto = Files.readAllBytes(fc.showOpenDialog(SceneBuilder.getStage()).toPath());
+			user = LoggedUser.getLoggedUser();
+			user.setFoto(foto);
 
-		file = fc.showOpenDialog(SceneBuilder.getStage());
-		// TODO persistir file;
-		file = file.getAbsoluteFile();
+			SourcesLoader.loadUserPhoto(this.foto, foto);
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	@FXML
 	public void handlerSalvar() {
+
 		if (nome.getText() != null && nome.getText().length() < 30) {
-			if (EmailValidator.getInstance().isValid(email.getText())) {
-				// TODO persistir informações
-			} else {
-				// TODO mensagem de erro email invalido
+			if (checkUni(nome.getText())) {
+				user.setNome(nome.getText());
+				erru = false;
+			} else if(nome.getText().equals(user.getNome())){
+				erru = false;
+			} else{
+				erru = true;
+				error.setText("Usuario indisponivel");
 			}
 		} else {
-			// TODO mensagem de erro nome muito grande
+			erru = true;
+			error.setText("Usuario vazio ou muito grande (maximo 30 caracteres)");
 		}
+
+		if (EmailValidator.getInstance().isValid(email.getText())) {
+			user.setEmail(email.getText());
+			erre = false;
+		} else {
+			erre = true;
+			error.setText("Email invalido");
+		}
+		
+		if (erre == false && erru == false) {
+			UserDao ud = new UserDao();
+			ud.atualizar(user);// persiste no bd
+			SceneBuilder.loadHomeScreen();
+		}
+
+	}
+	
+	// checa se o usuario tem um login unico
+	private static boolean checkUni(String nome) {
+		UserDao ud = new UserDao();
+
+		try {
+			User check = ud.getUserByName(nome);
+		} catch (NoResultException e) {
+			return true;
+		}
+		return false;
 	}
 
 	@FXML
@@ -98,7 +148,13 @@ public class UserViewEditController {
 		pontuacao.setText("" + user.getPontuacao());
 		maiorP.setText("" + user.getMaxPontuacao());
 
-		SourcesLoader.LoadBackground(background);
+		// System.out.println(user.getFoto().length);
+		/*
+		 * if (user.getFoto().length > 1) { try {
+		 * SourcesLoader.loadUserPhoto(foto, user.getFoto()); } catch
+		 * (IOException e) { error.setText("erro ao carregar imagem"); } }
+		 */
+		SourcesLoader.loadBackground(background);
 	}
 
 }

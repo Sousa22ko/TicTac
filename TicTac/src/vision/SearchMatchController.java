@@ -26,7 +26,7 @@ public class SearchMatchController {
 	@FXML
 	public void initialize(){
 		//TODO adicionar informação as listas
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 	
 	@FXML

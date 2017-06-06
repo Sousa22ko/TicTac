@@ -36,7 +36,7 @@ public class GenericDao<T, I> {
 	public T atualizar(T entidade) {
 		EntityTransaction t = manager.getTransaction();
 		t.begin();
-		manager.persist(entidade);
+		manager.merge(entidade);// persist
 		manager.flush();
 		t.commit();
 		return entidade;

@@ -32,24 +32,23 @@ public class NewAccountController {
 	private Label error;
 
 	private User novo = new User();
-	private UserDao ud = new UserDao();
 
 	private boolean erru = false;
 	private boolean erre = false;
 
 	@FXML
 	public void initialize() {
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 
 	public void createUser() {
 
 		if (nome.getText() != null && nome.getText().length() < 30) {
-			if (checkUni()) {
+			if (checkUni(nome.getText())) {
 				novo.setNome(nome.getText());
 				erru = false;
 			} else {
-				erru = true;
+				erru =true;
 				error.setText("Usuario indisponivel");
 			}
 		} else {
@@ -72,17 +71,18 @@ public class NewAccountController {
 		novo.setLastLeague(0);
 
 		if (erre == false && erru == false) {
+			UserDao ud = new UserDao();
 			ud.adicionar(novo);// persiste no bd
 			SceneBuilder.loadLoginScreen();
 		}
 	}
 
 	// checa se o usuario tem um login unico
-	private boolean checkUni() {
+	private static boolean checkUni(String nome) {
 		UserDao ud = new UserDao();
 
 		try {
-			User check = ud.getUserByName(nome.getText());
+			User check = ud.getUserByName(nome);
 		} catch (NoResultException e) {
 			return true;
 		}

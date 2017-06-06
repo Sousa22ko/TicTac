@@ -68,7 +68,7 @@ public class UserViewController {
 		pontuacao.setText(""+ user.getPontuacao()); // TODO colocar o label na tela
 		maiorP.setText("" + user.getMaxPontuacao());
 		
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 
 }

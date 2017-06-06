@@ -33,7 +33,7 @@ public class Login_ScreenController {
 
 	@FXML
 	public void initialize() {
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 
 	@FXML

@@ -35,7 +35,7 @@ public class HomeController {
 		//TODO colocar ft no bt 
 		//TODO carregar cor da liga no bt
 		
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 	
 	@FXML

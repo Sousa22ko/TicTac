@@ -24,6 +24,7 @@
                   <TextField fx:id="email" layoutX="260.0" layoutY="140.0" prefHeight="25.0" prefWidth="248.0" />
                   <TextField fx:id="nome" layoutX="260.0" layoutY="90.0" prefHeight="25.0" prefWidth="248.0" />
                   <Button layoutX="400.0" layoutY="345.0" mnemonicParsing="false" onAction="#handlerCancelar" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="Cancelar" />
+                  <Label fx:id="error" layoutX="245.0" layoutY="350.0" textFill="RED" />
                </children>
             </Pane>
             <Pane layoutX="961.0" layoutY="303.0" prefHeight="385.0" prefWidth="392.0" style="-fx-border-color: grey; -fx-background-color: lightyellow;">
@@ -42,14 +43,14 @@
                   <Label layoutX="40.0" layoutY="240.0" text="Ultima liga" />
                   <Label fx:id="lastL" layoutX="260.0" layoutY="240.0" text="Label" />
                   <Label layoutX="40.0" layoutY="290.0" text="Pontuação atual" />
-                  <Label layoutX="260.0" layoutY="290.0" text="Label" />
+                  <Label fx:id="pontuacao" layoutX="260.0" layoutY="290.0" text="Label" />
                </children>
             </Pane>
             <Pane layoutX="583.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: grey; -fx-background-color: red;">
                <children>
                   <Pane fx:id="backFoto" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white;">
                      <children>
-                        <Label fx:id="foto" prefHeight="180.0" prefWidth="180.0" text="Foto" />
+                        <Label fx:id="foto" maxHeight="180.0" maxWidth="180.0" prefHeight="180.0" prefWidth="180.0" text="Foto" />
                         <Button layoutX="154.0" layoutY="152.0" mnemonicParsing="false" onAction="#handlerFoto" style="-fx-background-color: whitesmoke; -fx-border-color: lightgrey;" text="+" />
                      </children>
                   </Pane>

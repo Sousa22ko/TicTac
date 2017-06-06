@@ -12,7 +12,7 @@ public class MatchController {
 	
 	@FXML
 	public void initialize(){
-		SourcesLoader.LoadBackground(background);
+		SourcesLoader.loadBackground(background);
 	}
 	
 	

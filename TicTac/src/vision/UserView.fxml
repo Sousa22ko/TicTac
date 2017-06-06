@@ -12,9 +12,9 @@
          <children>
             <Pane layoutX="415.0" layoutY="303.0" prefHeight="385.0" prefWidth="533.0" style="-fx-border-color: grey; -fx-background-color: white;">
                <children>
-                  <Label fx:id="nome" layoutX="260.0" layoutY="140.0" text="Label" />
+                  <Label fx:id="nome" layoutX="260.0" layoutY="90.0" text="Label" />
                   <Label layoutX="40.0" layoutY="90.0" text="Nome" />
-                  <Label fx:id="email" layoutX="260.0" layoutY="90.0" text="Label" />
+                  <Label fx:id="email" layoutX="260.0" layoutY="140.0" text="Label" />
                   <Label layoutX="40.0" layoutY="140.0" text="Email" />
                   <Label layoutX="176.0" layoutY="14.0" text="Informações pessoais">
                      <font>
